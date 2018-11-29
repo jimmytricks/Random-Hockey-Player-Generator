@@ -65,6 +65,8 @@ function init() {
   }
 
   function showInDom(selectedPlayer) {
+    let textOutput = `${nameOfPerson} - ${selectedPlayer.jerseyNumber} - ${selectedPlayer.person.fullName} - ${selectedPlayer.position.name}`;
+
     let mainSectionDOM = document.getElementById('main');
     let newUl = document.createElement('ul');
     let newLi = document.createElement('li');
@@ -72,7 +74,7 @@ function init() {
     mainSectionDOM.appendChild(newUl);
     newUl.appendChild(newLi);
 
-    let newTextNode = document.createTextNode(selectedPlayer.person.fullName);
+    let newTextNode = document.createTextNode(textOutput);
     newLi.appendChild(newTextNode);
   }
 
