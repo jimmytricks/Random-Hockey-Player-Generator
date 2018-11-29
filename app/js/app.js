@@ -7,8 +7,9 @@ let usedNumbers = [];
 function init() {
 
   let teamToGet = Number(
-    document.getElementById("team-selector").value
-  );
+    document.getElementById("team-selector").value);
+
+  let nameOfPerson = document.getElementById('name').value;
 
   fetch(`${config.apiInfo}${teamToGet}`)
     .then(
@@ -42,25 +43,25 @@ function init() {
     let randomSelection = calcRandomNumber(arrayLength - 1);
     usedNumbers.push(randomSelection);
     let selectedPlayer = teamArray[randomSelection];
-    console.log(`${selectedPlayer} - ${selectedPlayer.jerseyNumber} - ${selectedPlayer.person.fullName}`);
+    console.log(`${nameOfPerson} - ${selectedPlayer.jerseyNumber} - ${selectedPlayer.person.fullName} - ${selectedPlayer.position.name}`);
     return selectedPlayer;
   }
 
   function calcRandomNumber(amountOfPlayers) {
     let counter = 0;
     let randomSelection = Math.floor(Math.random() * Math.floor(amountOfPlayers));
-    
 
-    if (usedNumbers.includes(randomSelection) && counter <= amountOfPlayers){
-        console.log (randomSelection + ' looping recursion' + counter);
-        counter += 1;
-        calcRandomNumber(amountOfPlayers);
+
+    if (usedNumbers.includes(randomSelection) && counter <= amountOfPlayers) {
+      console.log(randomSelection + ' looping recursion' + counter);
+      counter += 1;
+      calcRandomNumber(amountOfPlayers);
     } else {
       counter = 0;
       console.log('done with recursion' + counter)
       return randomSelection;
     }
-    
+
   }
 
   function showInDom(selectedPlayer) {
