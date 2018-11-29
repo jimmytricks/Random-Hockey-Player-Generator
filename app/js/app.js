@@ -68,7 +68,7 @@ function init() {
   function showInDom(selectedPlayer) {
     let textOutput = `${nameOfPerson}: ${selectedPlayer.person.fullName} #${selectedPlayer.jerseyNumber} - ${selectedPlayer.position.name}`;
 
-    let mainSectionDOM = document.getElementById('main');
+    let mainSectionDOM = document.getElementById('main-left-side');
     let newUl = document.createElement('ul');
     let newLi = document.createElement('li');
 
@@ -143,7 +143,7 @@ function init2() {
   function showInDom(selectedPlayer) {
     let textOutput = `${nameOfPerson}: ${selectedPlayer.person.fullName} #${selectedPlayer.jerseyNumber} - ${selectedPlayer.position.name}`;
 
-    let mainSectionDOM = document.getElementById('main');
+    let mainSectionDOM = document.getElementById('main-right-side');
     let newUl = document.createElement('ul');
     let newLi = document.createElement('li');
 
