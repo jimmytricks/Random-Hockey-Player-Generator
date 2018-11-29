@@ -39,26 +39,28 @@ function init() {
 
   function getRandomPlayer(teamArray) {
     let arrayLength = teamArray.length;
-    let randomSelection = calcRandomNumber(arrayLength);
+    let randomSelection = calcRandomNumber(arrayLength - 1);
     usedNumbers.push(randomSelection);
     let selectedPlayer = teamArray[randomSelection];
-    console.log(selectedPlayer);
-    console.log(selectedPlayer.jerseyNumber);
-    console.log(selectedPlayer.person.fullName);
+    console.log(`${selectedPlayer} - ${selectedPlayer.jerseyNumber} - ${selectedPlayer.person.fullName}`);
     return selectedPlayer;
   }
 
   function calcRandomNumber(amountOfPlayers) {
-    let randomSelection = Math.floor(Math.random() * Math.floor(amountOfPlayers));
     let counter = 0;
+    let randomSelection = Math.floor(Math.random() * Math.floor(amountOfPlayers));
+    
 
     if (usedNumbers.includes(randomSelection) && counter <= amountOfPlayers){
-        console.log (randomSelection);
-        calcRandomNumber();
+        console.log (randomSelection + ' looping recursion' + counter);
+        counter += 1;
+        calcRandomNumber(amountOfPlayers);
     } else {
+      counter = 0;
+      console.log('done with recursion' + counter)
       return randomSelection;
     }
-
+    
   }
 
   function showInDom(selectedPlayer) {
