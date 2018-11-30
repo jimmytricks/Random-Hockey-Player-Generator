@@ -336,6 +336,31 @@ template {
   border: 2px;
 }
 
+html {
+  font-family: "Lato";
+  color: white;
+}
+
+html, body, .container {
+  height: 100%;
+  background-color: #0B3142;
+}
+
+h1 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.container {
+  margin: 0 0 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 5px 0;
+  font-size: 1.2rem;
+}
+
 .container {
   display: flex;
 }
@@ -345,6 +370,16 @@ template {
   flex-direction: column;
   align-items: center;
   width: 50%;
+  height: 100%;
+  padding: 20px;
+}
+
+#left-side {
+  background-color: #403F4C;
+}
+
+#right-side {
+  background-color: #3185FC;
 }
 
 /*# sourceMappingURL=style.css.map */
