@@ -2,10 +2,14 @@ const config = {
   apiInfo: 'https://statsapi.web.nhl.com/api/v1/teams/?expand=team.roster&teamId=',
 }
 
+let leftInitElement = document.getElementById('left-init');
+leftInitElement.addEventListener("click",init);
+
 let usedNumbers = [];
 let usedNumbers2 = [];
 
-function init() {
+function init(e) {
+  debugger;
 
   let teamToGet = Number(
     document.getElementById("team-selector").value);
