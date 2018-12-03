@@ -60,12 +60,15 @@ function init(e) {
 
   function pushToArray(teamArray) {
     let teamArrayRoster = teamArray.teams[0].roster.roster;
+    if (teamArrayRoster.length <= specificUsedNumberArray.length ) {
+      console.log('all players used up');
+    }
     return teamArrayRoster;
   }
 
   function getRandomPlayer(teamArray) {
     arrayLength = teamArray.length;
-    let randomSelection = calcRandomNumber(arrayLength - 1);
+    let randomSelection = calcRandomNumber(arrayLength);
     specificUsedNumberArray.push(randomSelection);
     let selectedPlayer = teamArray[randomSelection];
     return selectedPlayer;
@@ -79,13 +82,12 @@ function init(e) {
     // Generate random number up to amount of players
     let randomSelection = Math.floor(Math.random() * Math.floor(amountOfPlayers));
     console.log(randomSelection + ' random');
-    if (specificUsedNumberArray.includes(randomSelection) && counterOfCurrentPlayers !== amountOfPlayers) {
+    if (specificUsedNumberArray.includes(randomSelection) && arrayLength <= specificUsedNumberArray.length ) {
       console.log(randomSelection + ' looping recursion');
-      calcRandomNumber(arrayLength);  
+      return calcRandomNumber(arrayLength);  
     } else {
       return randomSelection;
     }
-    debugger;
   }
 
   function showInDom(selectedPlayer) {
