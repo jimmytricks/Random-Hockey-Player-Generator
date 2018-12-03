@@ -36,6 +36,8 @@ function init(e) {
 
   let nameOfPerson = document.getElementById(setNameID).value;
 
+  let arrayLength;
+
   fetch(`${config.apiInfo}${teamToGet}`)
     .then(
       function (response) {
@@ -62,7 +64,7 @@ function init(e) {
   }
 
   function getRandomPlayer(teamArray) {
-    let arrayLength = teamArray.length;
+    arrayLength = teamArray.length;
     let randomSelection = calcRandomNumber(arrayLength - 1);
     specificUsedNumberArray.push(randomSelection);
     let selectedPlayer = teamArray[randomSelection];
@@ -70,17 +72,20 @@ function init(e) {
   }
 
   function calcRandomNumber(amountOfPlayers) {
-    let counter = 0;
+    let counterOfCurrentPlayers = specificUsedNumberArray.length;
+    console.log(amountOfPlayers); 
+
+    // if the specifid array includes the random number, and coutner of current players is equal to amount of players, end - otherwise add it tot he array
+    // Generate random number up to amount of players
     let randomSelection = Math.floor(Math.random() * Math.floor(amountOfPlayers));
-    if (specificUsedNumberArray.includes(randomSelection) && counter <= amountOfPlayers) {
-      console.log(randomSelection + ' looping recursion' + counter);
-      counter += 1;
-      calcRandomNumber(amountOfPlayers);
+    console.log(randomSelection + ' random');
+    if (specificUsedNumberArray.includes(randomSelection) && counterOfCurrentPlayers !== amountOfPlayers) {
+      console.log(randomSelection + ' looping recursion');
+      calcRandomNumber(arrayLength);  
     } else {
-      counter = 0;
-      console.log('done with recursion' + counter)
       return randomSelection;
     }
+    debugger;
   }
 
   function showInDom(selectedPlayer) {
