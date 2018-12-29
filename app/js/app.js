@@ -35,8 +35,6 @@ function init(e) {
   let teamToGet = Number(document.getElementById(setTeamSelectorID).value);
   let nameOfPerson = document.getElementById(setNameID).value;
 
-  let arrayLength;
-
   fetch(`${config.apiInfo}${teamToGet}`)
     .then(
       function (response) {
@@ -48,7 +46,7 @@ function init(e) {
 
         // Examine the text in the response
         response.json()
-          .then(pushToArray)
+          .then(pushSelectTeamToNewArray)
           .then(getRandomPlayer)
           .then(showInDom);
       }
@@ -57,16 +55,20 @@ function init(e) {
       console.log('Fetch Error :-S', err);
     });
 
-  function pushToArray(teamArray) {
+  function pushSelectTeamToNewArray(teamArray) {
     let teamArrayRoster = teamArray.teams[0].roster.roster;
+
+    // check if all players are used up
+    console.log('team array length' + teamArrayRoster.length);
+    console.log('specific used number array length' + specificUsedNumberArray.length);
     if (teamArrayRoster.length <= specificUsedNumberArray.length ) {
       console.log('all players used up');
-    }
+    } 
     return teamArrayRoster;
   }
 
   function getRandomPlayer(teamArray) {
-    arrayLength = teamArray.length;
+    let arrayLength = teamArray.length;
     let randomSelection = calcRandomNumber(arrayLength);
     specificUsedNumberArray.push(randomSelection);
     let selectedPlayer = teamArray[randomSelection];
@@ -81,9 +83,9 @@ function init(e) {
     // Generate random number up to amount of players
     let randomSelection = Math.floor(Math.random() * Math.floor(amountOfPlayers));
     console.log(randomSelection + ' random');
-    if (specificUsedNumberArray.includes(randomSelection) && arrayLength <= specificUsedNumberArray.length ) {
+    if (specificUsedNumberArray.includes(randomSelection) && counterOfCurrentPlayers <= specificUsedNumberArray.length ) {
       console.log(randomSelection + ' looping recursion');
-      return calcRandomNumber(arrayLength);  
+      return calcRandomNumber(amountOfPlayers);  
     } else {
       return randomSelection;
     }
