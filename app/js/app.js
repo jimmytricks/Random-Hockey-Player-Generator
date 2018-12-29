@@ -47,6 +47,7 @@ function init(e) {
         // Examine the text in the response
         response.json()
           .then(pushSelectTeamToNewArray)
+          .then(checkIfAllPlayersSelected)
           .then(getRandomPlayer)
           .then(showInDom);
       }
@@ -57,35 +58,41 @@ function init(e) {
 
   function pushSelectTeamToNewArray(teamArray) {
     let teamArrayRoster = teamArray.teams[0].roster.roster;
-
-    // check if all players are used up
-    console.log('team array length' + teamArrayRoster.length);
-    console.log('specific used number array length' + specificUsedNumberArray.length);
-    if (teamArrayRoster.length <= specificUsedNumberArray.length ) {
-      console.log('all players used up');
-    } 
     return teamArrayRoster;
   }
 
+  function checkIfAllPlayersSelected(teamArrayRoster){
+        // check if all players are used up
+        console.log('team array length' + teamArrayRoster.length);
+        console.log('specific used number array length' + specificUsedNumberArray.length);
+        if (teamArrayRoster.length <= specificUsedNumberArray.length ) {
+          console.log('all players used up');
+        } else {
+          return teamArrayRoster;
+        }
+  }
+
   function getRandomPlayer(teamArray) {
-    let arrayLength = teamArray.length;
-    let randomSelection = calcRandomNumber(arrayLength);
+    let currentTeamArrayLength = teamArray.length;
+    let randomSelection = calcRandomNumber(currentTeamArrayLength);
     specificUsedNumberArray.push(randomSelection);
     let selectedPlayer = teamArray[randomSelection];
     return selectedPlayer;
   }
 
-  function calcRandomNumber(amountOfPlayers) {
-    let counterOfCurrentPlayers = specificUsedNumberArray.length;
-    console.log(amountOfPlayers); 
+  function calcRandomNumber(amountOfPlayersInTeam) {
+    let numberOfCurrentPlayersAlreadyInArray = specificUsedNumberArray.length;
+    console.log('amount of players' + amountOfPlayersInTeam); 
+    console.log('counter of current players' + numberOfCurrentPlayersAlreadyInArray); 
+
 
     // if the specifid array includes the random number, and coutner of current players is equal to amount of players, end - otherwise add it tot he array
     // Generate random number up to amount of players
-    let randomSelection = Math.floor(Math.random() * Math.floor(amountOfPlayers));
+    let randomSelection = Math.floor(Math.random() * Math.floor(amountOfPlayersInTeam));
     console.log(randomSelection + ' random');
-    if (specificUsedNumberArray.includes(randomSelection) && counterOfCurrentPlayers <= specificUsedNumberArray.length ) {
+    if (specificUsedNumberArray.includes(randomSelection) && numberOfCurrentPlayersAlreadyInArray < amountOfPlayersInTeam ) {
       console.log(randomSelection + ' looping recursion');
-      return calcRandomNumber(amountOfPlayers);  
+      return calcRandomNumber(amountOfPlayersInTeam);  
     } else {
       return randomSelection;
     }
