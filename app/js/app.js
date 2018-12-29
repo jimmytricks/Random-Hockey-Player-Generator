@@ -31,9 +31,8 @@ function init(e) {
   // check if left or right team array should be set
   let specificUsedNumberArray = isLeftSelectedBoolean ? usedNumbersLeft : usedNumbersRight;
 
-  let teamToGet = Number(
-    document.getElementById(setTeamSelectorID).value);
-
+  // Get team name and name of person playing
+  let teamToGet = Number(document.getElementById(setTeamSelectorID).value);
   let nameOfPerson = document.getElementById(setNameID).value;
 
   let arrayLength;
