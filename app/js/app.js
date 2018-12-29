@@ -49,7 +49,8 @@ function init(e) {
           .then(pushSelectTeamToNewArray)
           .then(checkIfAllPlayersSelected)
           .then(getRandomPlayer)
-          .then(showInDom);
+          .then(showInDom)
+          .catch(err => {console.log('Selected all players from team: ' + err)});
       }
     )
     .catch(function (err) {
@@ -63,10 +64,7 @@ function init(e) {
 
   function checkIfAllPlayersSelected(teamArrayRoster){
         // check if all players are used up
-        console.log('team array length' + teamArrayRoster.length);
-        console.log('specific used number array length' + specificUsedNumberArray.length);
         if (teamArrayRoster.length <= specificUsedNumberArray.length ) {
-          console.log('all players used up');
         } else {
           return teamArrayRoster;
         }
@@ -82,16 +80,11 @@ function init(e) {
 
   function calcRandomNumber(amountOfPlayersInTeam) {
     let numberOfCurrentPlayersAlreadyInArray = specificUsedNumberArray.length;
-    console.log('amount of players' + amountOfPlayersInTeam); 
-    console.log('counter of current players' + numberOfCurrentPlayersAlreadyInArray); 
-
 
     // if the specifid array includes the random number, and coutner of current players is equal to amount of players, end - otherwise add it tot he array
     // Generate random number up to amount of players
     let randomSelection = Math.floor(Math.random() * Math.floor(amountOfPlayersInTeam));
-    console.log(randomSelection + ' random');
     if (specificUsedNumberArray.includes(randomSelection) && numberOfCurrentPlayersAlreadyInArray < amountOfPlayersInTeam ) {
-      console.log(randomSelection + ' looping recursion');
       return calcRandomNumber(amountOfPlayersInTeam);  
     } else {
       return randomSelection;
