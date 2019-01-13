@@ -7,96 +7,119 @@
   <title>Random Hockey Player Selector</title>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="app/css/style.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <script src="app/js/app.js" defer></script>
 </head>
 
 <body>
-    <h1>Random Hockey Player Selector</h1>
+
   <main class="container">
-    
-    <section id="left-side">
-      <div class="top-level-elements">
-        <select id="team-selector-left">
-          <option value="24">Anaheim Ducks</option>
-          <option value="53">Arizona Coyotes</option>
-          <option value="6">Boston Bruins</option>
-          <option value="7">Buffalo Sabres</option>
-          <option value="20">Calgary Flames</option>
-          <option value="12">Carolina Hurricanes</option>
-          <option value="16">Chicago Blackhawks</option>
-          <option value="21">Colorado Avalanche</option>
-          <option value="29">Columbus Blue Jackets</option>
-          <option value="25">Dallas Stars</option>
-          <option value="17">Detroit Red Wings</option>
-          <option value="22">Edmonton Oilers</option>
-          <option value="13">Florida Panthers</option>
-          <option value="26">Los Angeles Kings</option>
-          <option value="30">Minnesota Wild</option>
-          <option value="8">Montreal Canadiens</option>
-          <option value="18">Nashville Predators</option>
-          <option value="1">New Jersey Devils</option>
-          <option value="2">New York Islanders</option>
-          <option value="3">New York Rangers</option>
-          <option value="9">Ottawa Senators</option>
-          <option value="4">Philadelphia Flyers</option>
-          <option value="5">Pittsburgh Penguins</option>
-          <option value="19">Saint Louis Blues</option>
-          <option value="28">San Jose Sharks</option>
-          <option value="14">Tampa Bay Lighting</option>
-          <option value="10">Toronto Maple Leafs</option>
-          <option value="23">Vancouver Canucks</option>
-          <option value="54">Vegas Golden Knights</option>
-          <option value="15">Washington Capitals</option>
-          <option value="52">Winnipeg Jets</option>
-        </select>
-        <input type="text" id="name-left">
-        <input type="submit" id="left-init">
-      </div>
-      <div id="main-left-side">
-      </div>
+    <header>
+      <h1>Random Hockey Player Selector</h1>
+    </header>
+
+    <section class="side-container">
+      <section id="left-side">
+        <div class="top-level-elements">
+          <select id="team-selector-left">
+            <option value="24">Anaheim Ducks</option>
+            <option value="53">Arizona Coyotes</option>
+            <option value="6">Boston Bruins</option>
+            <option value="7">Buffalo Sabres</option>
+            <option value="20">Calgary Flames</option>
+            <option value="12">Carolina Hurricanes</option>
+            <option value="16">Chicago Blackhawks</option>
+            <option value="21">Colorado Avalanche</option>
+            <option value="29">Columbus Blue Jackets</option>
+            <option value="25">Dallas Stars</option>
+            <option value="17">Detroit Red Wings</option>
+            <option value="22">Edmonton Oilers</option>
+            <option value="13">Florida Panthers</option>
+            <option value="26">Los Angeles Kings</option>
+            <option value="30">Minnesota Wild</option>
+            <option value="8">Montreal Canadiens</option>
+            <option value="18">Nashville Predators</option>
+            <option value="1">New Jersey Devils</option>
+            <option value="2">New York Islanders</option>
+            <option value="3">New York Rangers</option>
+            <option value="9">Ottawa Senators</option>
+            <option value="4">Philadelphia Flyers</option>
+            <option value="5">Pittsburgh Penguins</option>
+            <option value="19">Saint Louis Blues</option>
+            <option value="28">San Jose Sharks</option>
+            <option value="14">Tampa Bay Lighting</option>
+            <option value="10">Toronto Maple Leafs</option>
+            <option value="23">Vancouver Canucks</option>
+            <option value="54">Vegas Golden Knights</option>
+            <option value="15">Washington Capitals</option>
+            <option value="52">Winnipeg Jets</option>
+          </select>
+          <input type="text" id="name-left">
+          <input type="submit" id="left-init">
+        </div>
+        <div id="main-left-side">
+        </div>
+      </section>
+
+      <section id="right-side">
+        <div class="top-level-elements">
+          <select id="team-selector-right">
+            <option value="24">Anaheim Ducks</option>
+            <option value="53">Arizona Coyotes</option>
+            <option value="6">Boston Bruins</option>
+            <option value="7">Buffalo Sabres</option>
+            <option value="20">Calgary Flames</option>
+            <option value="12">Carolina Hurricanes</option>
+            <option value="16">Chicago Blackhawks</option>
+            <option value="21">Colorado Avalanche</option>
+            <option value="29">Columbus Blue Jackets</option>
+            <option value="25">Dallas Stars</option>
+            <option value="17">Detroit Red Wings</option>
+            <option value="22">Edmonton Oilers</option>
+            <option value="13">Florida Panthers</option>
+            <option value="26">Los Angeles Kings</option>
+            <option value="30">Minnesota Wild</option>
+            <option value="8">Montreal Canadiens</option>
+            <option value="18">Nashville Predators</option>
+            <option value="1">New Jersey Devils</option>
+            <option value="2">New York Islanders</option>
+            <option value="3">New York Rangers</option>
+            <option value="9">Ottawa Senators</option>
+            <option value="4">Philadelphia Flyers</option>
+            <option value="5">Pittsburgh Penguins</option>
+            <option value="19">Saint Louis Blues</option>
+            <option value="28">San Jose Sharks</option>
+            <option value="14">Tampa Bay Lighting</option>
+            <option value="10">Toronto Maple Leafs</option>
+            <option value="23">Vancouver Canucks</option>
+            <option value="54">Vegas Golden Knights</option>
+            <option value="15">Washington Capitals</option>
+            <option value="52">Winnipeg Jets</option>
+          </select>
+          <input type="text" id="name-right">
+          <input type="submit" id="right-init">
+        </div>
+        <div id="main-right-side">
+        </div>
+      </section>
     </section>
 
-    <section id="right-side">
-      <div class="top-level-elements">
-        <select id="team-selector-right">
-          <option value="24">Anaheim Ducks</option>
-          <option value="53">Arizona Coyotes</option>
-          <option value="6">Boston Bruins</option>
-          <option value="7">Buffalo Sabres</option>
-          <option value="20">Calgary Flames</option>
-          <option value="12">Carolina Hurricanes</option>
-          <option value="16">Chicago Blackhawks</option>
-          <option value="21">Colorado Avalanche</option>
-          <option value="29">Columbus Blue Jackets</option>
-          <option value="25">Dallas Stars</option>
-          <option value="17">Detroit Red Wings</option>
-          <option value="22">Edmonton Oilers</option>
-          <option value="13">Florida Panthers</option>
-          <option value="26">Los Angeles Kings</option>
-          <option value="30">Minnesota Wild</option>
-          <option value="8">Montreal Canadiens</option>
-          <option value="18">Nashville Predators</option>
-          <option value="1">New Jersey Devils</option>
-          <option value="2">New York Islanders</option>
-          <option value="3">New York Rangers</option>
-          <option value="9">Ottawa Senators</option>
-          <option value="4">Philadelphia Flyers</option>
-          <option value="5">Pittsburgh Penguins</option>
-          <option value="19">Saint Louis Blues</option>
-          <option value="28">San Jose Sharks</option>
-          <option value="14">Tampa Bay Lighting</option>
-          <option value="10">Toronto Maple Leafs</option>
-          <option value="23">Vancouver Canucks</option>
-          <option value="54">Vegas Golden Knights</option>
-          <option value="15">Washington Capitals</option>
-          <option value="52">Winnipeg Jets</option>
-        </select>
-        <input type="text" id="name-right">
-        <input type="submit" id="right-init">
-      </div>
-      <div id="main-right-side">
-      </div>
-    </section>
+    <footer class="footer">
+        <div class="github-container">
+          <p>
+          <a href="https://github.com/jimmytricks/" target="_blank">View on GitHub
+            <span class="fab fa-github fa-lg"></span>
+          </a>
+          </p>
+        </div>
+        <div class="central-footer">
+          
+        </div>
+        <div class="zu-container">
+          <p>Crafted in the ZU: <a href="http://www.przu.com" target="_blank" class="site-link">PRZU.com</a>
+          </p>
+        </div>
+      </footer>
   </main>
 
 </body>

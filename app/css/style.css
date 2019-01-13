@@ -330,29 +330,25 @@ template {
   display: none;
 }
 
-.test {
-  display: none;
-  text-transform: uppercase;
-  border: 2px;
-}
-
 html {
   font-family: "Lato";
-  color: white;
+  color: #ffffff;
 }
 
-html, body, .container {
+html, body {
   height: 100%;
-  background-color: #0B3142;
+  background-color: #1F1E27;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 h1 {
   font-size: 1.2rem;
   text-align: center;
-}
-
-.container {
-  margin: 0 0 20px;
+  font-weight: 300;
 }
 
 ul {
@@ -363,6 +359,13 @@ ul {
 
 .container {
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.side-container {
+  display: flex;
+  flex: 1;
 }
 
 #left-side, #right-side {
@@ -370,7 +373,6 @@ ul {
   flex-direction: column;
   align-items: center;
   width: 50%;
-  height: 100%;
   padding: 20px;
 }
 
@@ -380,6 +382,22 @@ ul {
 
 #right-side {
   background-color: #3185FC;
+}
+
+footer {
+  background-color: #1F1E27;
+  padding: 5px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #EAE8FF;
+}
+footer a {
+  color: #EAE8FF;
+}
+footer .site-link {
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
