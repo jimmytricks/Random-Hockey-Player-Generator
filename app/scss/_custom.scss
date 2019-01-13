@@ -23,7 +23,7 @@ h1 {
 }
 
 h3 {
-    margin-top:0;
+    margin-top:10px;
 }
 
 ul {
@@ -81,7 +81,7 @@ ul {
 /* Element styling */ 
 
 #main-left-side, #main-right-side {
-    max-width:460px;
+    max-width:490px;
 }
 
 // #right-init, #left-init {
@@ -114,10 +114,12 @@ footer {
 .tooltip {
     position: absolute;
     display: inline-block;
-    right: 20px;
-    top: 16px;
+    right: 0px;
+    top: 0px;
     font-size: 0.9rem;
-    color:$darker-white;
+    background-color: $primary-color;
+    color: $darker-white;
+    padding: 8px 10px;
   }
   
   .tooltip .tooltiptext {

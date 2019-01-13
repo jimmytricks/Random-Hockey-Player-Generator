@@ -355,7 +355,7 @@ h1 {
 }
 
 h3 {
-  margin-top: 0;
+  margin-top: 10px;
 }
 
 ul {
@@ -436,10 +436,12 @@ footer .site-link {
 .tooltip {
   position: absolute;
   display: inline-block;
-  right: 20px;
-  top: 16px;
+  right: 0px;
+  top: 0px;
   font-size: 0.9rem;
+  background-color: #1F1E27;
   color: #a7a7a7;
+  padding: 8px 10px;
 }
 
 .tooltip .tooltiptext {
