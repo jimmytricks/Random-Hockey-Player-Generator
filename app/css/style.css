@@ -344,6 +344,9 @@ a {
   color: #ffffff;
   text-decoration: none;
 }
+a:hover {
+  color: #ffffff;
+}
 
 h1 {
   font-size: 1.2rem;
@@ -391,13 +394,39 @@ footer {
   align-items: center;
   justify-content: space-between;
   font-size: 0.9rem;
-  color: #EAE8FF;
+  color: #a7a7a7;
 }
 footer a {
-  color: #EAE8FF;
+  color: #a7a7a7;
 }
 footer .site-link {
   color: white;
+}
+
+/* Tool tip */
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  right: 20px;
+  top: 16px;
+  font-size: 0.9rem;
+  color: #a7a7a7;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 320px;
+  background-color: #403F4C;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 /*# sourceMappingURL=style.css.map */
