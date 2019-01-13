@@ -378,6 +378,21 @@ ul {
 .top-level-elements {
   margin-bottom: 10px;
 }
+.top-level-elements input {
+  padding: 8px;
+  border: none;
+  background-color: #eee;
+}
+.top-level-elements select {
+  width: 200px;
+  padding: 8px;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../images/down.png) 96%/15% no-repeat #eee;
+  background-size: 17px;
+}
 
 #left-side, #right-side {
   display: flex;

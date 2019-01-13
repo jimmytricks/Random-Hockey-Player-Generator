@@ -45,6 +45,21 @@ ul {
 
 .top-level-elements {
     margin-bottom:10px;
+    input {
+        padding: 8px;
+        border: none;
+        background-color: $fourth-color;
+    }
+    select {
+        width: 200px;
+        padding: 8px;
+        border:none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url(../images/down.png) 96%/15% no-repeat $fourth-color;
+        background-size:17px;
+    }
 }
 
 #left-side, #right-side {
@@ -68,6 +83,14 @@ ul {
 #main-left-side, #main-right-side {
     max-width:460px;
 }
+
+// #right-init, #left-init {
+//     background-color: $fourth-color;
+//     font-weight: 900;
+//     text-transform: uppercase;
+//     padding: 4px 10px;
+//     font-size: 0.8rem;
+// }
 
 /* Footer */ 
 footer {
