@@ -330,6 +330,7 @@ template {
   display: none;
 }
 
+/* Layout */
 html {
   font-family: "Lato";
   color: #ffffff;
@@ -340,6 +341,13 @@ html, body {
   background-color: #1F1E27;
 }
 
+ul {
+  list-style: none;
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+/* Font */
 a {
   color: #ffffff;
   text-decoration: none;
@@ -358,12 +366,7 @@ h3 {
   margin-top: 10px;
 }
 
-ul {
-  list-style: none;
-  margin: 5px 0;
-  font-size: 1rem;
-}
-
+/* Structure */
 .container {
   display: flex;
   flex-direction: column;
@@ -373,10 +376,13 @@ ul {
 .side-container {
   display: flex;
   flex: 1;
+  flex-direction: column;
 }
 
 .top-level-elements {
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
 .top-level-elements input {
   padding: 8px;
@@ -398,8 +404,9 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 100%;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 #left-side {
@@ -410,9 +417,11 @@ ul {
   background-color: #3185FC;
 }
 
-/* Element styling */
 #main-left-side, #main-right-side {
   max-width: 490px;
+}
+#main-left-side ul, #main-right-side ul {
+  padding-left: 0;
 }
 
 /* Footer */

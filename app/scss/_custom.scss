@@ -47,10 +47,13 @@ h3 {
 .side-container {
     display:flex;
     flex:1;
+    flex-direction:column;
 }
 
 .top-level-elements {
     margin-bottom:10px;
+    display:flex;
+    flex-direction:column;
     input {
         padding: 8px;
         border: none;
@@ -72,8 +75,9 @@ h3 {
     display:flex;
     flex-direction:column;
     align-items:center;
-    width:50%;
+    width:100%;
     padding: 20px;
+    box-sizing:border-box;
 }
 
 #left-side {
@@ -86,6 +90,9 @@ h3 {
 
 #main-left-side, #main-right-side {
     max-width:490px;
+    ul {
+        padding-left:0;
+    }
 }
 
 /* Footer */ 
@@ -132,4 +139,8 @@ footer {
   
   .tooltip:hover .tooltiptext {
     visibility: visible;
+  }
+
+  @media (min-width:0px) and (max-width:600px) {
+
   }
