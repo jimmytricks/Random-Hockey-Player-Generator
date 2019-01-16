@@ -91,7 +91,7 @@ function init(e) {
   }
 
   function showInDom(selectedPlayer) {
-    let textOutput = `${nameOfPerson}: ${selectedPlayer.person.fullName} #${selectedPlayer.jerseyNumber} - ${selectedPlayer.position.name}`;
+    let textOutput = `${nameOfPerson}: ${selectedPlayer.person.fullName} #${selectedPlayer.jerseyNumber} (${selectedPlayer.position.abbreviation})`;
 
     let specificSectionDOM = `main-${leftOrRight}-side`;
 
