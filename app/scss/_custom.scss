@@ -1,3 +1,5 @@
+/* Layout */ 
+
 html {
     font-family:'Lato';
     color:$white;
@@ -7,6 +9,14 @@ html, body {
     height:100%;
     background-color:$primary-color;
 }
+
+ul {
+    list-style:none;
+    margin: 5px 0;
+    font-size:1rem;
+}
+
+/* Font */ 
 
 a {
     color:$white;
@@ -26,11 +36,7 @@ h3 {
     margin-top:10px;
 }
 
-ul {
-    list-style:none;
-    margin: 5px 0;
-    font-size:1rem;
-}
+/* Structure */ 
 
 .container {
     display:flex;
@@ -78,19 +84,9 @@ ul {
     background-color:$secondary-color;
 }
 
-/* Element styling */ 
-
 #main-left-side, #main-right-side {
     max-width:490px;
 }
-
-// #right-init, #left-init {
-//     background-color: $fourth-color;
-//     font-weight: 900;
-//     text-transform: uppercase;
-//     padding: 4px 10px;
-//     font-size: 0.8rem;
-// }
 
 /* Footer */ 
 footer {
