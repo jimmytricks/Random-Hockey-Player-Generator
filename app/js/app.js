@@ -76,6 +76,8 @@ function init(e) {
   // check if all players are used up
   function checkIfAllPlayersSelected(teamArrayRoster){
         if (teamArrayRoster.length <= specificUsedNumberArray.length ) {
+          showAllPlayersSelectedMsg();
+
         } else {
           return teamArrayRoster;
         }
@@ -116,5 +118,9 @@ function init(e) {
 
     let newTextNode = document.createTextNode(textOutput);
     newLi.appendChild(newTextNode);
+  }
+
+  function showAllPlayersSelectedMsg(){
+    let allPlayerSelectedElement = document.querySelector(`.${leftOrRight}-full-team-msg`);    allPlayerSelectedElement.style.display = "block";
   }
 }

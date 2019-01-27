@@ -100,6 +100,12 @@ h3 {
     width:200px;
 }
 
+.left-full-team-msg, .right-full-team-msg {
+    width:200px;
+    color:red;
+    display:none;
+}
+
 /* Footer */ 
 footer {
     background-color: $primary-color;
