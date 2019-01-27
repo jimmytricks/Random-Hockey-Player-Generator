@@ -78,6 +78,7 @@ h3 {
     width:100%;
     padding: 20px;
     box-sizing:border-box;
+    min-height:300px;
 }
 
 #left-side {
@@ -93,6 +94,10 @@ h3 {
     ul {
         padding-left:0;
     }
+}
+
+.player-count {
+    width:200px;
 }
 
 /* Footer */ 
@@ -127,7 +132,7 @@ footer {
   
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 320px;
+    width: 280px;
     background-color: $tertiary-color;
     color: #fff;
     padding: 16px;

@@ -35,6 +35,18 @@ function init(e) {
   let teamToGet = Number(document.getElementById(setTeamSelectorID).value);
   let nameOfPerson = document.getElementById(setNameID).value;
 
+  // Hide any given class
+  function hideClass(classToHide){
+    let arrayOfClassToHide = document.getElementsByClassName(classToHide);
+      Array.prototype.forEach.call(arrayOfClassToHide,function(className, index){
+          className.style.display = 'none';
+        }
+      );
+  }
+
+  // player count hidden after click to make space for player names
+  hideClass('player-count');
+
   fetch(`${config.apiInfo}${teamToGet}`)
     .then(
       function (response) {

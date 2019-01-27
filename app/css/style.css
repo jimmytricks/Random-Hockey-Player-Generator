@@ -407,6 +407,7 @@ h3 {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+  min-height: 300px;
 }
 
 #left-side {
@@ -422,6 +423,10 @@ h3 {
 }
 #main-left-side ul, #main-right-side ul {
   padding-left: 0;
+}
+
+.player-count {
+  width: 200px;
 }
 
 /* Footer */
@@ -455,7 +460,7 @@ footer .site-link {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 320px;
+  width: 280px;
   background-color: #403F4C;
   color: #fff;
   padding: 16px;
