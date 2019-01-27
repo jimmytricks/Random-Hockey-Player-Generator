@@ -418,9 +418,6 @@ h3 {
   background-color: #3185FC;
 }
 
-#main-left-side, #main-right-side {
-  max-width: 490px;
-}
 #main-left-side ul, #main-right-side ul {
   padding-left: 0;
 }
@@ -467,7 +464,7 @@ footer .site-link {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 280px;
-  background-color: #403F4C;
+  background-color: #1F1E27;
   color: #fff;
   padding: 16px;
   border-radius: 6px;
@@ -478,6 +475,47 @@ footer .site-link {
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+@media screen and (min-width: 640px) and (max-width: 959px) {
+  .top-level-elements {
+    flex-direction: row;
+  }
+  .top-level-elements > * {
+    margin-right: 10px;
+  }
+
+  .player-count {
+    width: unset;
+  }
+}
+@media screen and (min-width: 959px) and (max-width: 1159px) {
+  .top-level-elements {
+    flex-direction: row;
+  }
+  .top-level-elements > * {
+    margin-right: 10px;
+  }
+
+  .player-count {
+    width: unset;
+  }
+}
+@media screen and (min-width: 1160px) {
+  .top-level-elements {
+    flex-direction: row;
+  }
+  .top-level-elements > * {
+    margin-right: 10px;
+  }
+
+  .player-count {
+    width: unset;
+  }
+
+  .side-container {
+    flex-direction: row;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

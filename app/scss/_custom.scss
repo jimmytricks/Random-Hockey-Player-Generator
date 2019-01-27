@@ -90,7 +90,7 @@ h3 {
 }
 
 #main-left-side, #main-right-side {
-    max-width:490px;
+    // max-width:490px;
     ul {
         padding-left:0;
     }
@@ -125,7 +125,7 @@ footer {
  
 /* Tool tip */
 
-.tooltip {
+    .tooltip {
     position: absolute;
     display: inline-block;
     right: 0px;
@@ -134,24 +134,63 @@ footer {
     background-color: $primary-color;
     color: $darker-white;
     padding: 8px 10px;
-  }
-  
-  .tooltip .tooltiptext {
+    }
+
+.tooltip .tooltiptext {
     visibility: hidden;
     width: 280px;
-    background-color: $tertiary-color;
+    background-color: $primary-color;
     color: #fff;
     padding: 16px;
     border-radius: 6px;
     position: absolute;
     right:0;
     z-index: 1;
-  }
-  
-  .tooltip:hover .tooltiptext {
+}
+
+.tooltip:hover .tooltiptext {
     visibility: visible;
-  }
+}
 
-  @media (min-width:0px) and (max-width:600px) {
 
-  }
+@media screen and (min-width:0px) and (max-width:639px) {
+}
+
+@media screen and (min-width:640px) and (max-width:959px) {
+    .top-level-elements {
+        flex-direction:row;
+        >* {
+            margin-right:10px;
+        }
+    }
+    .player-count {
+        width:unset;
+    }
+}
+
+@media screen and (min-width:959px) and (max-width:1159px) {
+    .top-level-elements {
+        flex-direction:row;
+        >* {
+            margin-right:10px;
+        }
+    }
+    .player-count {
+        width:unset;
+    }
+}
+
+@media screen and (min-width:1160px) {
+    .top-level-elements {
+        flex-direction:row;
+        >* {
+            margin-right:10px;
+        }
+    }
+    .player-count {
+        width:unset;
+    }
+    .side-container {
+        flex-direction:row;
+    }
+}
