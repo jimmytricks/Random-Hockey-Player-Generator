@@ -47,7 +47,7 @@ function init(e) {
   // player count hidden after click to make space for player names
   hideClass('player-count');
 
-  fetch(`${config.apiInfo}/v1/roster/${teamToGet}/20`, { mode: 'no-cors'})
+  fetch(`${config.apiInfo}/v1/roster/${teamToGet}/20232024`, { mode: 'no-cors'})
     .then(
       function (response) {
         if (response.status !== 200) {
