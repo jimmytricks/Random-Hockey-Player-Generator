@@ -47,7 +47,7 @@ function init(e) {
   // player count hidden after click to make space for player names
   hideClass('player-count');
 
-  fetch(`${config.apiInfo}/v1/roster/${teamToGet}/20232024`, { mode: 'no-cors'})
+  fetch(`${config.apiInfo}/v1/roster/${teamToGet}/20232024`)
     .then(
       function (response) {
         if (response.status !== 200) {
@@ -55,7 +55,7 @@ function init(e) {
             response.status);
           // return;
         }
-        console.log(response.json())
+        // console.log(response.json())
         response.json()
           .then(flattenAndCombineArrays)
           .then(checkIfAllPlayersSelected)
@@ -75,12 +75,8 @@ function init(e) {
 
   function flattenAndCombineArrays(data) {
     const flattenedArray = [];
-    
-    // Loop through each category (forwards, defensemen, goalies)
-    Object.values(data).forEach(category => {
-        // Loop through each player object in the category
+        Object.values(data).forEach(category => {
         category.forEach(player => {
-            // Push the player object into the flattened array
             flattenedArray.push(player);
         });
     });
