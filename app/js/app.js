@@ -1,5 +1,5 @@
 const config = {
-  apiInfo: 'https://statsapi.web.nhl.com/api/v1/teams/?expand=team.roster&teamId=',
+  apiInfo: 'https://api-web.nhle.com',
 }
 
 /* set event listeners */
@@ -32,7 +32,7 @@ function init(e) {
   let specificUsedNumberArray = isLeftSelectedBoolean ? usedNumbersLeft : usedNumbersRight;
 
   // Get team name and name of person playing
-  let teamToGet = Number(document.getElementById(setTeamSelectorID).value);
+  let teamToGet = document.getElementById(setTeamSelectorID).value;
   let nameOfPerson = document.getElementById(setNameID).value;
 
   // Hide any given class
@@ -47,7 +47,7 @@ function init(e) {
   // player count hidden after click to make space for player names
   hideClass('player-count');
 
-  fetch(`${config.apiInfo}${teamToGet}`)
+  fetch(`${config.apiInfo}/v1/roster/${teamToGet}/current`, { mode: 'no-cors'})
     .then(
       function (response) {
         if (response.status !== 200) {
@@ -55,9 +55,9 @@ function init(e) {
             response.status);
           return;
         }
-
+        console.log(response.json())
         response.json()
-          .then(pushSelectTeamToNewArray)
+          .then(flattenAndCombineArrays)
           .then(checkIfAllPlayersSelected)
           .then(getRandomPlayer)
           .then(showInDom)
@@ -68,10 +68,25 @@ function init(e) {
       console.log('Fetch Error :-S', err);
     });
 
-  function pushSelectTeamToNewArray(teamArray) {
-    let teamArrayRoster = teamArray.teams[0].roster.roster;
-    return teamArrayRoster;
-  }
+  // function pushSelectTeamToNewArray(teamArray) {
+  //   let teamArrayRoster = teamArray.teams[0].roster.roster;
+  //   return teamArrayRoster;
+  // }
+
+  function flattenAndCombineArrays(data) {
+    const flattenedArray = [];
+    
+    // Loop through each category (forwards, defensemen, goalies)
+    Object.values(data).forEach(category => {
+        // Loop through each player object in the category
+        category.forEach(player => {
+            // Push the player object into the flattened array
+            flattenedArray.push(player);
+        });
+    });
+
+    return flattenedArray;
+}
 
   // check if all players are used up
   function checkIfAllPlayersSelected(teamArrayRoster){
@@ -105,7 +120,8 @@ function init(e) {
   }
 
   function showInDom(selectedPlayer) {
-    let textOutput = `${nameOfPerson}: ${selectedPlayer.person.fullName} #${selectedPlayer.jerseyNumber} (${selectedPlayer.position.abbreviation})`;
+    // let textOutput = `${nameOfPerson}: ${selectedPlayer.person.fullName} #${selectedPlayer.jerseyNumber} (${selectedPlayer.position.abbreviation})`;
+    let textOutput = `${nameOfPerson}: ${selectedPlayer.firstName} ${selectedPlayer.lastName} #${selectedPlayer.sweaterNumber} (${selectedPlayer.positionCode})`;
 
     let specificSectionDOM = `main-${leftOrRight}-side`;
 
